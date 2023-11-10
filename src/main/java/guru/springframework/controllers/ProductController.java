@@ -22,8 +22,8 @@ public class ProductController {
 
     private static final Logger log = LoggerFactory.getLogger(ProductController.class);
 
-    private ProductService productService;
-    private PageViewService pageViewService;
+    private final ProductService productService;
+    private final PageViewService pageViewService;
 
     @Autowired
     public ProductController(ProductService productService, PageViewService pageViewService) {
@@ -42,7 +42,7 @@ public class ProductController {
         pageViewEvent.setPageViewDate(new Date());
         pageViewEvent.setCorrelationId(UUID.randomUUID().toString());
 
-        log.info("Sending Message to pagie view service");
+        log.info("Sending Message to page view service");
         pageViewService.sendPageViewEvent(pageViewEvent);
 
         return "product";
