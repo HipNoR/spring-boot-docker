@@ -19,7 +19,7 @@ import java.util.UUID;
 @Controller
 public class IndexController {
 
-    private static final Logger log = LoggerFactory.getLogger(ProductController.class);
+    private static final Logger log = LoggerFactory.getLogger(IndexController.class);
 
     private final ProductService productService;
     private final PageViewService pageViewService;
